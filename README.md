@@ -25,6 +25,12 @@ The following command will run `script.sh` anytime the device with MAC `88:71:E5
 sudo dashr en0 | grep --line-buffered 88:71:E5:24:C4:76 | while read line ; do echo $line | ./script.sh ; done
 ```
 
+With [hue-cli](https://github.com/JoshMcguigan/hue-cli) it is possible to toggle the status (on/off) of you Hue lights by pressing the Dash button.
+
+```
+sudo dashr en0 | grep --line-buffered 88:71:E5:24:C4:76 | while read line ; do echo $line | hue-cli cmd toggle ; done
+```
+
 If you'd rather not install dashr, you can replace `sudo dashr` above with `sudo cargo run`. In OS X, `sudo` is required to listen for network traffic.
 
 ## License
