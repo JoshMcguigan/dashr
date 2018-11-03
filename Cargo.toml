@@ -1,7 +1,7 @@
 [package]
 name = "dashr"
-version = "0.1.0"
-authors = ["Josh Mcguigan <>"]
+version = "0.2.0"
+authors = ["Josh Mcguigan"]
 
 [dependencies]
 pnet = "0.21.0"
