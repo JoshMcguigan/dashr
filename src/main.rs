@@ -21,11 +21,11 @@ struct Opt {
 fn main() {
     let opt = Opt::from_args();
 
-    let interface_names_match = |iface: &NetworkInterface| iface.name == opt.network_interface;
-
     // Find the network interface with the provided name
-    let interfaces = datalink::interfaces();
-    let interface = interfaces.into_iter().filter(interface_names_match).next().unwrap();
+    let interface = datalink::interfaces()
+        .into_iter()
+        .find(|iface| iface.name == opt.network_interface)
+        .expect("Network interface not found");
 
     // Create a channel to receive on
     let (_, mut rx) = match datalink::channel(&interface, Default::default()) {
