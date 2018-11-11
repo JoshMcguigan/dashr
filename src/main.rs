@@ -4,7 +4,7 @@ use pnet::packet::Packet;
 use pnet::packet::ethernet::{EtherTypes, EthernetPacket};
 use pnet::packet::ipv4::Ipv4Packet;
 use pnet::packet::udp::UdpPacket;
-use pnet::datalink::{self, NetworkInterface, Channel::Ethernet};
+use pnet::datalink::{self, Channel::Ethernet};
 use std::time::{SystemTime, Duration, UNIX_EPOCH};
 use structopt::StructOpt;
 
